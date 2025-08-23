@@ -1,194 +1,121 @@
-# 🌱 AgriShakti - Smart Farmer Dashboard
+# AgriShakti - Agriculture Technology Platform
 
-A comprehensive, single-page farmer dashboard application designed for hackathons and real-world farming needs. This application showcases all essential farming features in one impressive, modular layout.
+A comprehensive agriculture technology platform with a modern React frontend and Node.js/Express backend.
 
-## ✨ Features
+## Project Structure
 
-### 🔑 **Farmer Login & Personalization**
-- Simple login form collecting: Name, Mobile, Location, Current Crop
-- Personalized dashboard experience
-- Beautiful, animated UI with smooth transitions
+```
+AgriShakti/
+├── frontend/                 # React frontend application
+│   ├── public/              # Static files
+│   ├── src/                 # React source code
+│   │   ├── components/      # React components
+│   │   │   ├── dashboard/   # Dashboard components
+│   │   │   ├── FarmerDashboard.js
+│   │   │   └── LoginForm.js
+│   │   ├── App.js
+│   │   └── index.js
+│   ├── package.json
+│   └── README.md
+├── backend/                  # Node.js/Express backend
+│   ├── routes/              # API routes
+│   ├── controllers/         # Route controllers
+│   ├── models/              # Database models
+│   ├── middleware/          # Custom middleware
+│   ├── config/              # Configuration files
+│   ├── server.js            # Main server file
+│   ├── package.json
+│   └── README.md
+├── package.json              # Root package.json
+└── README.md                 # This file
+```
 
-### 📊 **Complete Dashboard Overview (Single Page)**
+## Features
 
-#### 🌾 **Crop Health (Crop Doctor)**
-- NDVI color-coded status indicators (Green/Yellow/Red)
-- Health percentage and stress area analysis
-- Smart recommendations for crop management
-- Visual health indicators with circular progress
+### Frontend
+- Modern React dashboard with beautiful UI
+- Responsive design for mobile and desktop
+- Interactive components for farming features
+- Real-time data visualization
 
-#### 🧪 **Soil Testing Results**
-- NPK values (Nitrogen, Phosphorus, Potassium)
-- pH levels and moisture content
-- Color-coded nutrient status
-- Actionable soil recommendations
+### Backend
+- Express.js REST API
+- Security middleware (helmet, CORS)
+- Database integration ready
+- JWT authentication support
+- Environment configuration
 
-#### 🌦️ **Weather Conditions**
-- Hyperlocal 4-day weather forecast
-- Current weather with detailed metrics
-- Weather alerts and farming recommendations
-- Beautiful weather icons and visual indicators
-
-#### 💧 **Smart Irrigation**
-- Soil moisture monitoring with visual indicators
-- 3-day irrigation schedule
-- Smart recommendations based on weather and soil
-- Optimal irrigation timing suggestions
-
-#### 🏪 **Mandi Prices (Agmarknet Integration)**
-- Live prices from nearby mandis
-- Best price highlighting
-- Price trends and market insights
-- Distance and quality information
-
-#### 📅 **Crop Planner (Next Season)**
-- Season-based crop recommendations
-- Suitability scoring with visual indicators
-- Sowing and harvest timelines
-- Market demand analysis
-
-#### 📈 **Market Price / Buyer Offers**
-- Direct buyer offers with ratings
-- Verified buyer badges
-- Premium pricing opportunities
-- Contact information and special terms
-
-#### 🗣️ **AI Farming Assistant (Chatbot)**
-- Vernacular language support
-- Quick question buttons
-- Voice input capability
-- Context-aware farming advice
-- Daily farming tips
-
-## 🎨 **Design Features**
-
-- **Modern UI/UX**: Clean, professional design perfect for hackathon demos
-- **Responsive Layout**: Works seamlessly on all devices
-- **Color-Coded Status**: Green (Healthy), Yellow (Warning), Red (Danger)
-- **Smooth Animations**: Framer Motion animations for engaging user experience
-- **Modular Cards**: Each feature in its own beautiful card
-- **Professional Styling**: CSS custom properties and modern design patterns
-
-## 🚀 **Why Judges Will Love This**
-
-✅ **Everything at One Glance** - All features accessible without navigation  
-✅ **Farmer-Friendly** - Simple, intuitive interface  
-✅ **Visually Impressive** - Professional, polished appearance  
-✅ **Scalable Architecture** - Easy to add more features  
-✅ **Real-World Ready** - Looks like a production product  
-
-## 🛠️ **Technology Stack**
-
-- **Frontend**: React 18 with modern hooks
-- **Styling**: CSS3 with custom properties and responsive design
-- **Animations**: Framer Motion for smooth interactions
-- **Icons**: React Icons (FontAwesome)
-- **Build Tool**: Create React App
-- **Package Manager**: npm
-
-## 📦 **Installation & Setup**
+## Quick Start
 
 ### Prerequisites
-- Node.js (v14 or higher)
-- npm (v6 or higher)
+- Node.js (v16 or higher)
+- npm or yarn
 
-### Quick Start
+### Installation
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
-   cd agrishakti-farmer-dashboard
+   git clone <your-repo-url>
+   cd AgriShakti
    ```
 
-2. **Install dependencies**
+2. **Install all dependencies**
    ```bash
-   npm install
+   npm run install:all
    ```
 
-3. **Start the development server**
+3. **Set up environment variables**
    ```bash
-   npm start
+   cd backend
+   cp env.example .env
+   # Edit .env with your configuration
    ```
 
-4. **Open your browser**
-   Navigate to `http://localhost:3000`
+4. **Start development servers**
+   ```bash
+   # Start both frontend and backend
+   npm run dev
+   
+   # Or start individually:
+   npm run dev:frontend    # Frontend on http://localhost:3000
+   npm run dev:backend     # Backend on http://localhost:5000
+   ```
 
-### Build for Production
-```bash
-npm run build
-```
+## Development
 
-## 🎯 **Usage Guide**
+### Frontend Development
+- Located in `frontend/` directory
+- Built with React 18
+- Uses modern CSS and responsive design
+- Component-based architecture
 
-### **For Farmers:**
-1. Enter your details on the login page
-2. View your personalized dashboard
-3. Check crop health, soil conditions, and weather
-4. Get irrigation and crop planning advice
-5. Check mandi prices and buyer offers
-6. Ask questions to the AI assistant
+### Backend Development
+- Located in `backend/` directory
+- Express.js server with middleware
+- RESTful API design
+- Ready for database integration
 
-### **For Hackathon Judges:**
-1. **Login Demo**: Use any name, mobile, location, and crop
-2. **Dashboard Tour**: All features visible in one screen
-3. **Interactive Elements**: Click on cards to see hover effects
-4. **Chatbot Demo**: Ask farming questions
-5. **Responsive Test**: Resize browser to see mobile adaptation
+## Available Scripts
 
-## 🔧 **Customization**
+- `npm run dev` - Start both frontend and backend in development mode
+- `npm run dev:frontend` - Start only frontend
+- `npm run dev:backend` - Start only backend
+- `npm run build` - Build frontend for production
+- `npm run install:all` - Install dependencies for all projects
 
-### **Adding New Features:**
-- Create new card components in `src/components/dashboard/`
-- Add them to the dashboard grid in `FarmerDashboard.js`
-- Style them using the shared `DashboardCard.css`
+## API Endpoints
 
-### **Modifying Data:**
-- Update simulated data in each card component
-- Integrate real APIs by replacing mock data
-- Customize recommendations and insights
+- `GET /` - Welcome message
+- `GET /health` - Health check
 
-### **Styling Changes:**
-- Modify CSS custom properties in `src/index.css`
-- Update card-specific styles in `DashboardCard.css`
-- Adjust responsive breakpoints as needed
+## Contributing
 
-## 📱 **Responsive Design**
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
 
-- **Desktop**: Full grid layout with all features visible
-- **Tablet**: Responsive grid with optimized spacing
-- **Mobile**: Single-column layout with touch-friendly interactions
-- **All Devices**: Consistent visual hierarchy and readability
+## License
 
-## 🌟 **Future Enhancements**
-
-- **Real API Integration**: Weather, soil testing, mandi prices
-- **Multi-language Support**: Hindi, Marathi, Gujarati, etc.
-- **Offline Capability**: PWA features for rural areas
-- **Push Notifications**: Weather alerts and price updates
-- **Data Analytics**: Historical farming data and trends
-- **Community Features**: Farmer-to-farmer communication
-
-## 🤝 **Contributing**
-
-This project is perfect for:
-- **Hackathons**: Complete, working demo
-- **Learning**: Modern React patterns and CSS
-- **Extension**: Adding new farming features
-- **Customization**: Adapting for different regions
-
-## 📄 **License**
-
-This project is open source and available under the MIT License.
-
-## 🙏 **Acknowledgments**
-
-- **Farmers**: For inspiring this digital solution
-- **React Community**: For the amazing framework
-- **Design Inspiration**: Modern dashboard patterns
-- **Agricultural Experts**: For domain knowledge
-
----
-
-**Built with ❤️ for Smart Agriculture**
-
-*Empowering farmers with technology, one dashboard at a time.*
+This project is licensed under the ISC License.
