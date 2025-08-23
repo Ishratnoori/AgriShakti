@@ -1,0 +1,1440 @@
+/* Dashboard Card Base Styles */
+.dashboard-card {
+  background: var(--bg-card);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.card-icon {
+  font-size: 1.5rem;
+  color: var(--primary-green);
+}
+
+.card-title h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card-content h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.card-content h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.card-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-content li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.card-content li:last-child {
+  border-bottom: none;
+}
+
+/* Crop Health Card Specific Styles */
+.ndvi-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.ndvi-indicator {
+  position: relative;
+}
+
+.ndvi-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.ndvi-value {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ndvi-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.ndvi-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.ndvi-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.health-percentage,
+.stress-areas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.percentage-number,
+.stress-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-green);
+}
+
+.percentage-label,
+.stress-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.health-message {
+  background: var(--secondary-green);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border-left: 4px solid var(--primary-green);
+}
+
+.health-message p {
+  margin: 0;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.recommendations h4 {
+  margin-bottom: 0.75rem;
+}
+
+/* Soil Testing Card Specific Styles */
+.npk-section {
+  margin-bottom: 1.5rem;
+}
+
+.npk-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.nutrient-item {
+  text-align: center;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 0.75rem;
+}
+
+.nutrient-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+.nutrient-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.nutrient-status {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.soil-properties {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.property-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 0.75rem;
+}
+
+.property-icon {
+  font-size: 1.25rem;
+  color: var(--primary-green);
+}
+
+.property-info {
+  flex: 1;
+}
+
+.property-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.property-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.property-status {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Weather Card Specific Styles */
+.location-info {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.current-weather {
+  margin-bottom: 1.5rem;
+}
+
+.current-main {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.current-icon {
+  font-size: 3rem;
+  color: var(--accent-yellow);
+}
+
+.current-details {
+  flex: 1;
+}
+
+.current-temp {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.current-condition {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.current-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.weather-forecast {
+  margin-bottom: 1.5rem;
+}
+
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.forecast-day {
+  text-align: center;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 0.75rem;
+}
+
+.forecast-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.forecast-day-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.alert-icon {
+  color: var(--accent-red);
+  font-size: 0.9rem;
+}
+
+.forecast-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.weather-icon.sunny { color: var(--accent-yellow); }
+.weather-icon.partly-cloudy { color: var(--accent-blue); }
+.weather-icon.cloudy { color: var(--text-secondary); }
+.weather-icon.rainy { color: var(--accent-blue); }
+
+.forecast-temps {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.forecast-high {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.forecast-low {
+  color: var(--text-secondary);
+}
+
+.forecast-condition {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.weather-alerts {
+  margin-bottom: 1.5rem;
+}
+
+.alert-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.alert-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: #fef3c7;
+  border-radius: 0.5rem;
+  border-left: 4px solid var(--accent-yellow);
+}
+
+.alert-icon-small {
+  color: var(--accent-yellow);
+  font-size: 0.9rem;
+}
+
+/* Irrigation Card Specific Styles */
+.irrigation-status {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.irrigation-status-main {
+  margin-bottom: 1.5rem;
+}
+
+.moisture-indicator {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.moisture-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: conic-gradient(var(--primary-green) 0deg 115deg, #e5e7eb 115deg 360deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.moisture-value {
+  background: white;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.moisture-number {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.moisture-label {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+}
+
+.moisture-info {
+  flex: 1;
+}
+
+.moisture-range {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.moisture-status-text {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.irrigation-schedule {
+  margin-bottom: 1.5rem;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.schedule-day {
+  text-align: center;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 0.75rem;
+}
+
+.schedule-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.schedule-day-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.schedule-icon {
+  font-size: 1rem;
+}
+
+.schedule-icon.check { color: var(--primary-green); }
+.schedule-icon.warning { color: var(--accent-yellow); }
+.schedule-icon.irrigate { color: var(--accent-blue); }
+
+.schedule-moisture {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.schedule-status {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.irrigation-info {
+  margin-bottom: 1.5rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.info-item {
+  padding: 0.75rem;
+  background: var(--bg-secondary);
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.info-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.info-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Mandi Prices Card Specific Styles */
+.last-updated {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.crop-info {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.crop-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.best-price-section {
+  margin-bottom: 1.5rem;
+}
+
+.best-price-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.best-price-card {
+  background: linear-gradient(135deg, var(--primary-green), var(--primary-green-dark));
+  color: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.best-price-main {
+  margin-bottom: 1rem;
+}
+
+.best-price-amount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.rupee-icon {
+  font-size: 1.5rem;
+}
+
+.price-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.price-unit {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.best-price-location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.best-price-details {
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.mandi-prices-list {
+  margin-bottom: 1.5rem;
+}
+
+.mandi-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mandi-item {
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+}
+
+.mandi-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.mandi-name {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.mandi-distance {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.distance-icon {
+  font-size: 0.8rem;
+}
+
+.mandi-price-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.mandi-price {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.price-icon {
+  font-size: 1rem;
+}
+
+.price-amount {
+  font-weight: 700;
+}
+
+.price-unit {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.mandi-change {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.trend-icon.up { color: var(--primary-green); }
+.trend-icon.down { color: var(--accent-red); }
+
+.change-amount {
+  font-weight: 700;
+}
+
+.change-percent {
+  opacity: 0.8;
+}
+
+.mandi-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* Crop Planner Card Specific Styles */
+.season-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.current-season {
+  color: var(--text-secondary);
+}
+
+.season-arrow {
+  color: var(--primary-green);
+  font-weight: 600;
+}
+
+.next-season {
+  color: var(--primary-green);
+  font-weight: 600;
+}
+
+.conditions-summary {
+  margin-bottom: 1.5rem;
+}
+
+.conditions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.condition-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 0.75rem;
+}
+
+.condition-icon {
+  font-size: 1.25rem;
+  color: var(--primary-green);
+}
+
+.condition-info {
+  flex: 1;
+}
+
+.condition-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.condition-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.recommended-crops {
+  margin-bottom: 1.5rem;
+}
+
+.crops-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.crop-item {
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+}
+
+.crop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.crop-name-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.crop-icon {
+  font-size: 1.25rem;
+  color: var(--primary-green);
+}
+
+.crop-names {
+  display: flex;
+  flex-direction: column;
+}
+
+.crop-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+}
+
+.crop-scientific {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.crop-suitability {
+  text-align: center;
+}
+
+.suitability-score {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.suitability-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-transform: capitalize;
+}
+
+.crop-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.crop-reason {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.crop-timeline {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.timeline-label {
+  color: var(--text-secondary);
+}
+
+.timeline-value {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.crop-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.metric-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.metric-label {
+  color: var(--text-secondary);
+}
+
+.metric-value {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Market Offers Card Specific Styles */
+.offers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.offer-item {
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  border-radius: 1rem;
+  border: 1px solid var(--border-color);
+}
+
+.offer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.buyer-info {
+  flex: 1;
+}
+
+.buyer-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.verified-badge {
+  background: var(--primary-green);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.buyer-location {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.location-icon {
+  font-size: 0.8rem;
+}
+
+.offer-rating {
+  text-align: center;
+}
+
+.stars {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.star {
+  font-size: 0.9rem;
+}
+
+.star.filled { color: var(--accent-yellow); }
+.star.half-filled { color: var(--accent-yellow); }
+.star.empty { color: var(--border-color); }
+
+.rating-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.offer-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.offer-price-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.offer-price {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.rupee-icon {
+  font-size: 1.25rem;
+}
+
+.price-number {
+  font-weight: 700;
+}
+
+.price-unit {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.offer-quantity {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.offer-specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.spec-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.spec-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.offer-highlights {
+  margin-bottom: 1rem;
+}
+
+.offer-highlights h5 {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.offer-highlights ul {
+  margin: 0;
+}
+
+.offer-highlights li {
+  padding: 0.25rem 0;
+  border-bottom: none;
+  font-size: 0.85rem;
+}
+
+.offer-terms {
+  margin-bottom: 1rem;
+}
+
+.special-terms {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  background: var(--secondary-green);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border-left: 4px solid var(--primary-green);
+}
+
+.offer-contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.contact-icon {
+  font-size: 0.8rem;
+  color: var(--primary-green);
+}
+
+.contact-buyer-btn {
+  background: var(--primary-green);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.contact-buyer-btn:hover {
+  background: var(--primary-green-dark);
+  transform: translateY(-1px);
+}
+
+/* Chatbot Card Specific Styles */
+.chatbot-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-dot.online {
+  background: var(--primary-green);
+}
+
+.status-text {
+  color: var(--text-secondary);
+}
+
+.chatbot-intro {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--secondary-green);
+  border-radius: 0.75rem;
+}
+
+.bot-avatar {
+  width: 50px;
+  height: 50px;
+  background: var(--primary-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bot-icon {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.intro-text h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-primary);
+}
+
+.intro-text p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.quick-questions {
+  margin-bottom: 1.5rem;
+}
+
+.questions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.quick-question-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.quick-question-btn:hover {
+  background: var(--primary-green);
+  color: white;
+  border-color: var(--primary-green);
+}
+
+.chat-interface {
+  margin-bottom: 1.5rem;
+}
+
+.chat-form {
+  margin: 0;
+}
+
+.chat-input-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 2px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.chat-input:focus {
+  outline: none;
+  border-color: var(--primary-green);
+}
+
+.chat-actions {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.voice-btn,
+.send-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.voice-btn {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.voice-btn:hover {
+  background: var(--border-color);
+}
+
+.send-btn {
+  background: var(--primary-green);
+  color: white;
+}
+
+.send-btn:hover {
+  background: var(--primary-green-dark);
+}
+
+.chat-response {
+  background: var(--secondary-green);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border-left: 4px solid var(--primary-green);
+  margin-bottom: 1.5rem;
+}
+
+.response-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.response-icon {
+  color: var(--primary-green);
+  font-size: 1rem;
+}
+
+.response-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.response-content p {
+  margin: 0;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.farming-tips {
+  margin-bottom: 1.5rem;
+}
+
+.tips-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tip-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: var(--bg-secondary);
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.tip-icon {
+  color: var(--primary-green);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.language-support {
+  margin-top: auto;
+}
+
+.language-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.language-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.languages {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.language {
+  background: var(--bg-secondary);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-card {
+    padding: 1rem;
+  }
+  
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .npk-grid,
+  .forecast-grid,
+  .schedule-grid,
+  .conditions-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .soil-properties,
+  .info-grid,
+  .crop-timeline,
+  .crop-metrics,
+  .offer-specs {
+    grid-template-columns: 1fr;
+  }
+  
+  .questions-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .ndvi-section,
+  .moisture-indicator {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .ndvi-circle,
+  .moisture-circle {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .ndvi-value,
+  .moisture-value {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .current-main {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .current-icon {
+    font-size: 2.5rem;
+  }
+  
+  .current-temp {
+    font-size: 2rem;
+  }
+  
+  .best-price-card {
+    padding: 1rem;
+  }
+  
+  .price-number {
+    font-size: 2rem;
+  }
+  
+  .offer-header {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .offer-price-section {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+  
+  .offer-contact {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
