@@ -30,20 +30,6 @@ AgriShakti/
 └── README.md                 # This file
 ```
 
-## Features
-
-### Frontend
-- Modern React dashboard with beautiful UI
-- Responsive design for mobile and desktop
-- Interactive components for farming features
-- Real-time data visualization
-
-### Backend
-- Express.js REST API
-- Security middleware (helmet, CORS)
-- Database integration ready
-- JWT authentication support
-- Environment configuration
 
 ## Quick Start
 
