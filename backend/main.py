@@ -6,6 +6,14 @@ app = FastAPI()
 from pydantic import BaseModel, Field, PositiveFloat
 from typing import Dict
 
+import joblib
+import numpy as np
+
+
+encoder = joblib.load("models/encoder_yield.joblib")
+yield_model = joblib.load("models/crop_yield_model.joblib")
+
+
 curr_farmer_id = 1
 farmers = {
     1 : {
@@ -77,13 +85,50 @@ def get_soil_stats(input: SoilInput) -> Dict[str, str]:
         "message": "Crop health is GOOD for the given location and date range (hardcoded test response)."
     }
 
-mcp = FastApiMCP(app, name="Agri Controller", description="MCP for BMI and Soil health tools")
-mcp.mount_http()
-
-
 ######
 
 
+
+class CropYieldInput(BaseModel):
+    Jstate: str = Field(..., description="State name")
+    Jdistrict: str = Field(..., description="District name")
+    Jseason: str = Field(..., description="Season (e.g., Kharif, Rabi)")
+    Jcrops: str = Field(..., description="Crop name")
+    Jarea: PositiveFloat = Field(..., description="Area of cultivation in hectares")
+
+# --------- Endpoint for Crop Yield Prediction ----------
+@app.get(
+    "/crop_yield",
+    operation_id="predict_crop_yield",
+    summary="Predict crop yield production for a given state, district, season, crop, and area"
+)
+def predict_crop_yield(input: CropYieldInput) -> Dict[str, str]:
+    """
+    Predicts crop yield based on input parameters using encoder and ML model.
+    """
+
+    # Encode categorical values (state, district, season, crop)
+    encoded_features = encoder.transform([[input.Jstate, input.Jdistrict, input.Jseason, input.Jcrops]])
+    
+    # Combine encoded categorical with numerical (area)
+    final_features = np.hstack([encoded_features, [[input.Jarea]]])
+
+    # Predict production
+    prediction = yield_model.predict(final_features)[0]
+
+    return {
+        "Predicted Production": f"{prediction:.2f}",
+        "message": f"Predicted production for {input.Jcrops} in {input.Jdistrict}, {input.Jstate} ({input.Jseason}) on {input.Jarea} hectares is {prediction:.2f}."
+    }
+
+
+mcp = FastApiMCP(
+    app,
+    name="Agri Controller",
+    description="MCP for BMI, Soil health, and Crop Yield Prediction tools"
+)
+
+mcp.mount_http()
 
 
 # crew_mcp_agent.py
