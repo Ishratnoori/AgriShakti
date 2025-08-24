@@ -27,6 +27,11 @@ const LoginForm = ({ onLogin }) => {
 
   return (
     <div className="login-container">
+      <div className="floating-wheat">🌾</div>
+      <div className="floating-seedling">🌱</div>
+      <div className="floating-farmer">👨‍🌾</div>
+      <div className="floating-sun">☀️</div>
+      <div className="floating-cloud">☁️</div>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
