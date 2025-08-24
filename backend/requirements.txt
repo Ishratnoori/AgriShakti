@@ -1,0 +1,7 @@
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+earthengine-api==0.1.37
+python-multipart==0.0.6
+# Note: geemap is optional and can cause conflicts
+# geemap==0.29.0
