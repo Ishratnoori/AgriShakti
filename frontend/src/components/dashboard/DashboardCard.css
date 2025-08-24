@@ -281,14 +281,7 @@
   }
 }
 
-/* Crop Health Card Specific Styles */
 
-/* Form Styles */
-.crop-health-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
 
 .form-section {
   background: var(--bg-secondary);
@@ -2593,19 +2586,7 @@
   text-align: center;
 }
 
-/* Crop Health specific map instructions */
-.crop-health-card .map-instructions {
-  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
-  border: 1px solid #22c55e;
-}
 
-.crop-health-card .map-instructions p {
-  color: #166534;
-}
-
-.crop-health-card .map-instructions strong {
-  color: #15803d;
-}
 
 .map-instructions p {
   margin: 0;
