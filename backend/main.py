@@ -71,9 +71,11 @@ def main(user_query: str):
         )
         result = crew.kickoff()
         print("\n--- RESULT ---\n", result)
-        return result
+        # Ensure plain string only
+        return str(result.raw) if hasattr(result, "raw") else str(result)
 
 if __name__ == "__main__":
     # read user query from command line
     query = " ".join(sys.argv[1:]) or "List available MCP tools and return results."
     main(query)
+
