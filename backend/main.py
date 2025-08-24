@@ -63,28 +63,7 @@ def calculate_bmi(input: BMIInput) -> Dict[str,float]:
 
 
 ### soil function
-
-class SoilInput(BaseModel):
-    lat: float = Field(..., description="Latitude of the location")
-    lon: float = Field(..., description="Longitude of the location")
-    buffer_m: PositiveFloat = Field(..., description="Buffer radius in meters around the point")
-    start: str = Field(..., description="Start date for NDVI and moisture data (YYYY-MM-DD)")
-    end: str = Field(..., description="End date for NDVI and moisture data (YYYY-MM-DD)")
-
-@app.get(
-    "/soil_stats",
-    operation_id="get_soil_stats",
-    summary="Fetch NDVI and moisture statistics for given location and time range"
-)
-def get_soil_stats(input: SoilInput) -> Dict[str, str]:
-    """
-    Always return a hardcoded crop health status for testing
-    """
-    return {
-        "crop_health": "GOOD",
-        "message": "Crop health is GOOD for the given location and date range (hardcoded test response)."
-    }
-
+    
 ######
 
 
@@ -122,13 +101,105 @@ def predict_crop_yield(input: CropYieldInput) -> Dict[str, str]:
     }
 
 
+
+# Load your trained crop recommendation model
+crop_recommendation_model = joblib.load("models/crop_recommendation_model.joblib")
+
+# --------- Input model for Crop Recommendation ----------
+@app.get(
+    "/crop_recommendation",
+    operation_id="recommend_crop",
+    summary="Recommend best crop based on soil and environmental parameters"
+)
+def recommend_crop(
+    n_params: float,
+    p_params: float,
+    k_params: float,
+    t_params: float,
+    h_params: float,
+    ph_params: float,
+    r_params: float
+) -> Dict[str, str]:
+    """
+    Predicts the best crop to cultivate based on input soil and environmental parameters.
+    """
+
+    # Prepare input for model as 2D array (1 sample)
+    model_input = np.array([[n_params, p_params, k_params, t_params, h_params, ph_params, r_params]])
+    
+    # Debug print to verify input
+    print("Model Input:", model_input)
+    
+    # Predict crop
+    predicted_crop = crop_recommendation_model.predict(model_input)[0]
+
+    return {
+        "Predicted Crop": predicted_crop,
+        "message": f"Based on the given parameters, the recommended crop is {predicted_crop}."
+    }
+
+
+
+
+# Load models and encoders
+fertilizer_model = joblib.load("models/fertilizer_model.joblib")
+soil_encoder = joblib.load("models/soil_encoder.joblib")
+crop_encoder = joblib.load("models/encoder_yield.joblib")  # same encoder used in crop yield
+
+# --------- Endpoint for Fertilizer Recommendation ----------
+@app.get(
+    "/fertilizer_recommendation",
+    operation_id="recommend_fertilizer",
+    summary="Recommend best fertilizer based on environmental and soil parameters"
+)
+def recommend_fertilizer(
+    temp: float,
+    humidity: float,
+    moisture: float,
+    soil_type: str,
+    crop_type: str,
+    nitrogen: float,
+    potassium: float,
+    phosphorous: float
+) -> Dict[str, str]:
+    """
+    Predicts the best fertilizer to use based on input environmental and soil parameters.
+    """
+
+    # Encode categorical variables
+    soil_encoded = soil_encoder.transform([[soil_type]])
+    crop_encoded = crop_encoder.transform([[crop_type]])
+
+    # Combine all inputs
+    model_input = np.hstack([
+        soil_encoded,
+        crop_encoded,
+        [[temp, humidity, moisture, nitrogen, potassium, phosphorous]]
+    ])
+
+    # Debug print to verify input
+    print("Fertilizer Model Input:", model_input)
+
+    # Predict fertilizer
+    predicted_fertilizer = fertilizer_model.predict(model_input)[0]
+
+    return {
+        "Predicted Fertilizer": predicted_fertilizer,
+        "message": f"Based on the given parameters, the recommended fertilizer is {predicted_fertilizer}."
+    }
+
+
+
 mcp = FastApiMCP(
     app,
     name="Agri Controller",
-    description="MCP for BMI, Soil health, and Crop Yield Prediction tools"
+    description="MCP for BMI, Soil health, Crop Yield, Crop Recommendation, and Fertilizer Recommendation tools"
 )
-
 mcp.mount_http()
+
+
+
+
 
 
 # crew_mcp_agent.py
