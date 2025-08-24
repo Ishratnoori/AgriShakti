@@ -81,6 +81,206 @@
   border-bottom: none;
 }
 
+/* Crop Planner Card Specific Styles */
+
+/* Internal Cards Navigation */
+.internal-cards-nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.internal-card-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0.75rem;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.internal-card-nav:hover {
+  border-color: var(--card-color);
+  color: var(--card-color);
+  transform: translateY(-2px);
+}
+
+.internal-card-nav.active {
+  border-color: var(--card-color);
+  background: var(--card-color);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.nav-icon {
+  font-size: 1.25rem;
+}
+
+/* Internal Card Container */
+.internal-card-container {
+  background: var(--bg-secondary);
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.internal-card-content {
+  padding: 1.5rem;
+}
+
+/* Form Grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.75rem;
+  border: 2px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.form-group input::placeholder {
+  color: var(--text-light);
+}
+
+/* Result Section */
+.result-section {
+  background: linear-gradient(135deg, var(--primary-green), var(--primary-green-dark));
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  color: white;
+  text-align: center;
+}
+
+.result-section h4 {
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.result-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.result-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.result-unit {
+  font-size: 1rem;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+/* Future Placeholder */
+.future-placeholder {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-secondary);
+}
+
+.placeholder-icon {
+  font-size: 3rem;
+  color: var(--accent-purple);
+  margin-bottom: 1rem;
+  opacity: 0.6;
+}
+
+.future-placeholder h4 {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.future-placeholder p {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.placeholder-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.feature-item {
+  background: var(--bg-card);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .internal-cards-nav {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .internal-card-nav {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .nav-icon {
+    font-size: 1rem;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .result-value {
+    font-size: 2rem;
+  }
+  
+  .placeholder-features {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Crop Health Card Specific Styles */
 
 /* Form Styles */
