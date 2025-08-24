@@ -9,15 +9,14 @@ import MandiPricesCard from './dashboard/MandiPricesCard';
 import CropPlannerCard from './dashboard/CropPlannerCard';
 import MarketOffersCard from './dashboard/MarketOffersCard';
 import ChatbotCard from './dashboard/ChatbotCard';
-import LocationInput from './LocationInput';
+
 import './FarmerDashboard.css';
 
 const FarmerDashboard = ({ farmerData, onLogout }) => {
   const [chatMessage, setChatMessage] = useState('');
   const [chatResponse, setChatResponse] = useState('');
   const [selectedCard, setSelectedCard] = useState(null);
-  const [showLocationInput, setShowLocationInput] = useState(false);
-  const [farmerLocation, setFarmerLocation] = useState(farmerData.location || null);
+
 
   const handleChatSubmit = (e) => {
     e.preventDefault();
@@ -29,12 +28,7 @@ const FarmerDashboard = ({ farmerData, onLogout }) => {
     }
   };
 
-  const handleLocationSelect = (locationData) => {
-    setFarmerLocation(locationData);
-    setShowLocationInput(false);
-    // You can also save this to localStorage or send to backend
-    localStorage.setItem('farmerLocation', JSON.stringify(locationData));
-  };
+
 
   const generateChatResponse = (message) => {
     const lowerMessage = message.toLowerCase();
@@ -69,7 +63,7 @@ const FarmerDashboard = ({ farmerData, onLogout }) => {
       id: 'weather',
       title: 'Weather',
       icon: '🌦️',
-      component: <WeatherCard location={farmerLocation?.address || farmerData.location} />
+      component: <WeatherCard location={farmerData.location} />
     },
     {
       id: 'irrigation',
@@ -183,19 +177,12 @@ const FarmerDashboard = ({ farmerData, onLogout }) => {
                 <span className="farmer-name">{farmerData.name}</span>
                 <FaMapMarkerAlt className="location-icon" />
                 <span className="farmer-location">
-                  {farmerLocation?.address || farmerData.location}
+                  {farmerData.location}
                 </span>
                 <FaSeedling className="crop-icon" />
                 <span className="farmer-crop">{farmerData.crop}</span>
               </div>
-              <button 
-                onClick={() => setShowLocationInput(true)} 
-                className="location-btn"
-                title="Update farm location"
-              >
-                <FaMapMarkerAlt />
-                Update Location
-              </button>
+
               <button onClick={onLogout} className="logout-btn">
                 <FaSignOutAlt />
                 Logout
@@ -274,42 +261,7 @@ const FarmerDashboard = ({ farmerData, onLogout }) => {
             )}
           </AnimatePresence>
 
-          {/* Location Input Modal */}
-          <AnimatePresence>
-            {showLocationInput && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="location-modal-overlay"
-                onClick={() => setShowLocationInput(false)}
-              >
-                <motion.div
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  exit={{ scale: 0.8, opacity: 0 }}
-                  className="location-modal"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <div className="location-modal-header">
-                    <h2 className="location-modal-title">Update Farm Location</h2>
-                    <button 
-                      className="location-close-btn" 
-                      onClick={() => setShowLocationInput(false)}
-                    >
-                      <FaTimes />
-                    </button>
-                  </div>
-                  <div className="location-modal-content">
-                    <LocationInput 
-                      onLocationSelect={handleLocationSelect}
-                      initialLocation={farmerLocation?.address}
-                    />
-                  </div>
-                </motion.div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+
         </div>
       </main>
     </div>

@@ -82,6 +82,239 @@
 }
 
 /* Crop Health Card Specific Styles */
+
+/* Form Styles */
+.crop-health-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-section {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+}
+
+.form-section h4 {
+  margin: 0 0 1rem 0;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-group input {
+  padding: 0.75rem;
+  border: 2px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  background: white;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+
+.form-group input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.form-group input[type="number"]::-webkit-outer-spin-button,
+.form-group input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Map Preview Styles */
+.map-preview {
+  background: white;
+  border: 2px solid var(--border-color);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.map-placeholder {
+  padding: 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.map-icon {
+  font-size: 2rem;
+  color: var(--primary-green);
+  margin-bottom: 0.5rem;
+}
+
+.map-placeholder p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.analyze-button {
+  background: var(--primary-green);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 200px;
+  justify-content: center;
+}
+
+.analyze-button:hover:not(:disabled) {
+  background: var(--primary-green-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+.analyze-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Error Message */
+.error-message {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.error-message p {
+  margin: 0;
+  color: #dc2626;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Analysis Details */
+.analysis-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 0.75rem;
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.detail-icon {
+  color: var(--primary-green);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.refresh-button,
+.new-analysis-button {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.refresh-button {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.refresh-button:hover {
+  background: var(--primary-green);
+  color: white;
+  border-color: var(--primary-green);
+}
+
+.new-analysis-button {
+  background: var(--primary-green);
+  color: white;
+}
+
+.new-analysis-button:hover {
+  background: var(--primary-green-dark);
+  transform: translateY(-1px);
+}
+
+/* Loading Details */
+.analysis-details {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.4;
+}
+
 .location-info {
   display: flex;
   align-items: center;
@@ -1828,6 +2061,23 @@
     gap: 0.75rem;
   }
   
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-section {
+    padding: 1rem;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .analyze-button {
+    min-width: auto;
+    width: 100%;
+  }
+  
   .npk-grid,
   .schedule-grid,
   .conditions-grid {
@@ -1923,4 +2173,246 @@
     gap: 1rem;
     text-align: center;
   }
+}
+
+/* Soil Testing Card Specific Styles */
+.soil-testing-card {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border: 2px solid #0ea5e9;
+  position: relative;
+  overflow: hidden;
+}
+
+.soil-testing-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0ea5e9, #06b6d4, #0891b2);
+}
+
+.soil-testing-card .card-header {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+  padding: 1.5rem;
+  border-radius: 1.5rem 1.5rem 0 0;
+  color: white;
+}
+
+.soil-testing-card .card-title h3 {
+  color: white;
+}
+
+.soil-testing-card .card-icon {
+  color: #fef3c7;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.soil-testing-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.soil-testing-card .form-section {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #0ea5e9;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.1);
+}
+
+.soil-testing-card .form-section h4 {
+  color: #0c4a6e;
+  border-bottom: 2px solid #0ea5e9;
+  padding-bottom: 0.5rem;
+}
+
+.soil-testing-card .analyze-button {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+}
+
+.soil-testing-card .analyze-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(14, 165, 233, 0.4);
+}
+
+.soil-testing-card .analyze-button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.soil-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.soil-testing-card .soil-data {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 2px solid #0ea5e9;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+.soil-testing-card .soil-data h4 {
+  color: #0c4a6e;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.soil-metric {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 0.75rem;
+  border: 2px solid #0ea5e9;
+  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.1);
+  transition: all 0.3s ease;
+}
+
+.soil-metric:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.2);
+  border-color: #0284c7;
+}
+
+.metric-icon {
+  font-size: 1.25rem;
+  color: var(--primary-green);
+}
+
+.metric-label {
+  font-weight: 500;
+  color: var(--text-primary);
+  flex: 1;
+}
+
+.metric-value {
+  font-weight: 600;
+  color: var(--accent-blue);
+  font-size: 1.1rem;
+}
+
+/* Soil Testing specific recommendations and actions */
+.soil-testing-card .recommendations {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 2px solid #f59e0b;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+.soil-testing-card .recommendations h4 {
+  color: #92400e;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.soil-testing-card .recommendations ul {
+  list-style: none;
+  padding: 0;
+}
+
+.soil-testing-card .recommendations li {
+  background: rgba(255, 255, 255, 0.8);
+  margin: 0.5rem 0;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border-left: 4px solid #f59e0b;
+  color: #78350f;
+  font-weight: 500;
+}
+
+.soil-testing-card .action-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.soil-testing-card .refresh-button,
+.soil-testing-card .new-analysis-button {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.soil-testing-card .refresh-button:hover,
+.soil-testing-card .new-analysis-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+/* Responsive adjustments for soil testing */
+@media (max-width: 768px) {
+  .soil-metrics {
+    grid-template-columns: 1fr;
+  }
+  
+  .soil-metric {
+    padding: 0.75rem;
+  }
+  
+  .soil-testing-card .action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Map Instructions Styling */
+.map-instructions {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 1px solid #f59e0b;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* Crop Health specific map instructions */
+.crop-health-card .map-instructions {
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+  border: 1px solid #22c55e;
+}
+
+.crop-health-card .map-instructions p {
+  color: #166534;
+}
+
+.crop-health-card .map-instructions strong {
+  color: #15803d;
+}
+
+.map-instructions p {
+  margin: 0;
+  color: #92400e;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.map-instructions strong {
+  color: #78350f;
 }

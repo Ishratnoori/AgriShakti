@@ -1,18 +1,16 @@
 @echo off
 echo Starting AgriShakti Soil Analysis API...
 echo.
-echo Make sure you have:
-echo 1. Python installed and in PATH
-echo 2. Dependencies installed (pip install -r requirements.txt)
-echo 3. Google Earth Engine authenticated (earthengine authenticate)
+echo This will start the soil analysis API on port 8000
+echo Make sure you have Python and the required packages installed
 echo.
-echo API will be available at: http://localhost:8000
-echo Documentation: http://localhost:8000/docs
-echo Health check: http://localhost:8000/health
-echo.
-echo Press Ctrl+C to stop the server
-echo.
+echo Press any key to continue...
+pause >nul
 
+echo.
+echo Starting API...
 python start_soil_api.py
 
-pause
+echo.
+echo API stopped. Press any key to exit...
+pause >nul

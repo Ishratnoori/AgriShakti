@@ -1,43 +1,54 @@
-// Google Maps API Configuration
-// Replace 'YOUR_GOOGLE_MAPS_API_KEY' with your actual Google Maps API key
-
-export const GOOGLE_MAPS_CONFIG = {
-  // Your Google Maps API key - get one from https://console.cloud.google.com/
-  API_KEY: 'YOUR_GOOGLE_MAPS_API_KEY',
+// Maps Configuration
+export const MAPS_CONFIG = {
+  // Primary Google Maps API key
+  googleMapsApiKey: 'AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg',
   
-  // Default center coordinates (Pune, India)
-  DEFAULT_CENTER: {
-    lat: 18.5204,
-    lng: 73.8567
+  // Alternative API keys (you can add your own valid keys here)
+  alternativeKeys: [
+    // Add your valid Google Maps API key here
+    // 'YOUR_VALID_API_KEY_HERE'
+  ],
+  
+  // Fallback mapping services
+  fallbackServices: {
+    openStreetMap: true,
+    leaflet: true,
+    staticMaps: true
   },
   
-  // Default zoom level
-  DEFAULT_ZOOM: 12,
+  // Map settings
+  defaultZoom: 15,
+  defaultMapType: 'satellite',
   
-  // Map styles for a cleaner look
-  MAP_STYLES: [
-    {
-      featureType: 'poi',
-      elementType: 'labels',
-      stylers: [{ visibility: 'off' }]
-    },
-    {
-      featureType: 'transit',
-      elementType: 'labels',
-      stylers: [{ visibility: 'off' }]
-    }
-  ]
+  // API endpoints
+  endpoints: {
+    googleMaps: 'https://maps.googleapis.com/maps/api/js',
+    openStreetMap: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    staticMaps: 'https://maps.googleapis.com/maps/api/staticmap'
+  }
 };
 
-// Instructions for getting a Google Maps API key:
-// 1. Go to https://console.cloud.google.com/
-// 2. Create a new project or select an existing one
-// 3. Enable the following APIs:
-//    - Maps JavaScript API
-//    - Places API
-//    - Geocoding API
-// 4. Create credentials (API key)
-// 5. Restrict the API key to your domain for security
-// 6. Replace 'YOUR_GOOGLE_MAPS_API_KEY' in index.html and this file
+// Helper function to get a working API key
+export const getWorkingApiKey = () => {
+  // For now, return the primary key
+  // In production, you should implement key rotation and validation
+  return MAPS_CONFIG.googleMapsApiKey;
+};
 
-export default GOOGLE_MAPS_CONFIG;
+// Helper function to check if Google Maps is available
+export const isGoogleMapsAvailable = () => {
+  return window.google && window.google.maps;
+};
+
+// Helper function to get fallback map URL
+export const getFallbackMapUrl = (lat, lng, zoom = 15) => {
+  return `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lng}&zoom=${zoom}`;
+};
+
+// Helper function to get static map URL
+export const getStaticMapUrl = (lat, lng, zoom = 15, size = '400x300') => {
+  const key = getWorkingApiKey();
+  return `${MAPS_CONFIG.endpoints.staticMaps}?center=${lat},${lng}&zoom=${zoom}&size=${size}&key=${key}`;
+};
+
+export default MAPS_CONFIG;

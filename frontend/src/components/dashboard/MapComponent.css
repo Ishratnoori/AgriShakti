@@ -1,0 +1,323 @@
+.map-container {
+  background: white;
+  border-radius: 0.75rem;
+  border: 2px solid #0ea5e9;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.15);
+  transition: all 0.3s ease;
+}
+
+.map-container:hover {
+  box-shadow: 0 6px 16px rgba(14, 165, 233, 0.25);
+}
+
+.map-container.expanded {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  height: 80vh;
+  z-index: 1000;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.map-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  color: white;
+}
+
+.map-header h5 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.map-toggle-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+}
+
+.map-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.05);
+}
+
+.google-map {
+  width: 100%;
+  min-height: 300px;
+  background: #f8fafc;
+}
+
+.map-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.map-coordinates {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.map-coordinates svg {
+  color: #0ea5e9;
+  font-size: 1rem;
+}
+
+.map-coordinates span {
+  font-family: 'Courier New', monospace;
+  font-weight: 500;
+}
+
+.map-radius {
+  background: #0ea5e9;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+/* Fallback Map Styling */
+.map-fallback {
+  background: white;
+  border-radius: 0.75rem;
+  border: 2px solid #0ea5e9;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.15);
+}
+
+.fallback-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  color: white;
+}
+
+.fallback-icon {
+  font-size: 1.5rem;
+  color: #fef3c7;
+}
+
+.fallback-header h5 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.fallback-map {
+  padding: 2rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fallback-map-content {
+  text-align: center;
+  position: relative;
+}
+
+.fallback-marker {
+  font-size: 4rem;
+  color: #0ea5e9;
+  margin-bottom: 1rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.fallback-coordinates {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.coord-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.coord-label {
+  font-weight: 600;
+  color: #475569;
+}
+
+.coord-value {
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  color: #0ea5e9;
+  background: #f0f9ff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.fallback-actions {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  flex-wrap: wrap;
+}
+
+.fallback-location-btn,
+.fallback-external-btn {
+  flex: 1;
+  min-width: 140px;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.fallback-location-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+}
+
+.fallback-location-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.fallback-external-btn {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+}
+
+.fallback-external-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.fallback-info {
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-top: 1px solid #f59e0b;
+}
+
+.fallback-info p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #92400e;
+}
+
+.fallback-info strong {
+  color: #78350f;
+}
+
+/* Original error styling for backward compatibility */
+.map-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  background: #fef2f2;
+  border: 2px dashed #f87171;
+  border-radius: 0.75rem;
+  color: #dc2626;
+}
+
+.map-error-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #f87171;
+}
+
+.map-error p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .map-container.expanded {
+    width: 95vw;
+    height: 90vh;
+  }
+  
+  .map-info {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  
+  .map-coordinates {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .map-coordinates span {
+    font-size: 0.8rem;
+  }
+}
+
+/* Map type selector styling */
+.gm-style-mtc button {
+  background: white !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 0.5rem !important;
+  color: #475569 !important;
+  font-weight: 500 !important;
+  padding: 0.5rem 1rem !important;
+  margin: 0.25rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.gm-style-mtc button:hover {
+  background: #f1f5f9 !important;
+  border-color: #0ea5e9 !important;
+  color: #0ea5e9 !important;
+}
+
+.gm-style-mtc button[aria-pressed="true"] {
+  background: #0ea5e9 !important;
+  color: white !important;
+  border-color: #0ea5e9 !important;
+}
