@@ -6,6 +6,29 @@ app = FastAPI()
 from pydantic import BaseModel, Field, PositiveFloat
 from typing import Dict
 
+curr_farmer_id = 1
+farmers = {
+    1 : {
+          "lat": 17.924612,
+          "log" : 73.712006,
+          "fertilizers" : ["DAV"],
+          "start_date" : "12-01-2025",
+          "end_date" : "12-02-2025",
+          "buffer" : 100,
+          "soil_characteristics" : {'NDVI_mean': 0.46127950124962236, 'SM_surface': None,           'SM_rootzone': None, 'pH_top30cm': 5.6000000000000005, 'SOC_gkg_top30cm': 36.666666666666664, 'SOC_pct_top30cm': 3.6666666666666665, 'WC33_vpct_top30cm': 41.666666666666664},
+          "current_crop" : "wheat",
+          "state" : "karnataka",                    
+        }
+
+}
+
+fertilizers = {
+    "DAV" : {
+        "N" : 30,
+        "P" : 10,
+        "K" : 23
+    } 
+}
 
 
 class BMIInput(BaseModel):
@@ -91,8 +114,8 @@ def main(user_query: str):
         agent = Agent(
             role="MCP Tooling Agent",
            ## goal="do not make unneccessary api calls to llm and answer the queries based on tools you have",
-            goal="Use available MCP tools (BMI, Soil Analysis) to answer queries",
-            backstory="Connected to FastAPI MCP server, able to invoke its tools.",
+            goal="Use available MCP tools to answer queries",
+            backstory=f"The current farmer stats are {farmers.get(curr_farmer_id)}",
             tools=selected_tools,
             llm=llm,
             verbose=True,
