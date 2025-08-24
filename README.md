@@ -1,6 +1,6 @@
 # AgriShakti - Agriculture Technology Platform
 
-A comprehensive agriculture technology platform with a modern React frontend and Node.js/Express backend.
+A comprehensive agriculture technology platform to help farmers all over the world.
 
 ## Project Structure
 
