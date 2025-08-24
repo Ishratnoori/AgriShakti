@@ -1,0 +1,450 @@
+/* Location Input Container */
+.location-input-container {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Location Header */
+.location-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.location-header h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.location-header p {
+  color: #7f8c8d;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.location-icon {
+  color: #e74c3c;
+  font-size: 1.5rem;
+}
+
+/* Location Input Section */
+.location-input-section {
+  margin-bottom: 2rem;
+}
+
+.search-form {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.search-input-group {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  color: #95a5a6;
+  font-size: 1rem;
+  z-index: 2;
+}
+
+.location-input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  border: 2px solid #ecf0f1;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f8f9fa;
+}
+
+.location-input:focus {
+  outline: none;
+  border-color: #3498db;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.current-location-btn {
+  position: absolute;
+  right: 0.5rem;
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+
+.current-location-btn:hover {
+  background: #2980b9;
+  transform: scale(1.05);
+}
+
+.current-location-btn:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.search-btn {
+  padding: 1rem 2rem;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.search-btn:hover {
+  background: #229954;
+  transform: translateY(-1px);
+}
+
+.search-btn:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Error Message */
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: #fee;
+  border: 1px solid #fcc;
+  border-radius: 0.5rem;
+  color: #c33;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.error-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* Coordinates Display */
+.coordinates-display {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.coordinate-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.coordinate-item:last-child {
+  margin-bottom: 0;
+}
+
+.coordinate-label {
+  font-weight: 600;
+  color: #495057;
+  font-size: 0.9rem;
+}
+
+.coordinate-value {
+  font-family: 'Courier New', monospace;
+  background: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #dee2e6;
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+/* Map Section */
+.map-section {
+  margin-bottom: 2rem;
+}
+
+.toggle-map-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #34495e;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 1rem;
+}
+
+.toggle-map-btn:hover {
+  background: #2c3e50;
+  transform: translateY(-1px);
+}
+
+.map-container {
+  border: 2px solid #ecf0f1;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.google-map {
+  width: 100%;
+  height: 400px;
+  background: #f8f9fa;
+}
+
+.map-instructions {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.map-instructions p {
+  margin: 0.25rem 0;
+  font-size: 0.85rem;
+  color: #495057;
+}
+
+/* Location Actions */
+.location-actions {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.confirm-location-btn {
+  padding: 1rem 2rem;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.confirm-location-btn:hover {
+  background: #c0392b;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.confirm-location-btn:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.confirm-icon {
+  font-size: 1rem;
+}
+
+/* Location Summary */
+.location-summary {
+  background: #e8f5e8;
+  border: 1px solid #c3e6c3;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.location-summary h4 {
+  margin: 0 0 1rem 0;
+  color: #27ae60;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.selected-address {
+  font-size: 1rem;
+  color: #2c3e50;
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+
+.selected-coordinates {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin: 0.5rem 0 0 0;
+  background: white;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+}
+
+/* Loading States */
+.location-input-container.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .location-input-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .search-form {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .search-input-group {
+    order: 1;
+  }
+
+  .search-btn {
+    order: 2;
+    width: 100%;
+  }
+
+  .location-header h3 {
+    font-size: 1.25rem;
+  }
+
+  .google-map {
+    height: 300px;
+  }
+
+  .map-instructions {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    margin-top: 1rem;
+  }
+
+  .coordinate-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .coordinate-value {
+    align-self: stretch;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .location-input-container {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+
+  .location-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .google-map {
+    height: 250px;
+  }
+
+  .confirm-location-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Animation Classes */
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Google Maps Custom Styles */
+.gm-style-moc {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.gm-style-mtc button {
+  background-color: white !important;
+  color: #333 !important;
+}
+
+/* Custom Marker Styles */
+.custom-marker {
+  background: #e74c3c;
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

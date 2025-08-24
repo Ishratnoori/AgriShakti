@@ -67,6 +67,27 @@
   color: var(--text-primary);
 }
 
+.location-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--primary-green);
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.location-btn:hover {
+  background: var(--primary-green-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .logout-btn {
   display: flex;
   align-items: center;
@@ -473,5 +494,99 @@
   .back-btn {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
+  }
+}
+
+/* Location Modal Styles */
+.location-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.location-modal {
+  background: white;
+  border-radius: 1rem;
+  max-width: 90vw;
+  max-height: 90vh;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.location-modal-header {
+  background: var(--primary-green);
+  color: white;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.location-modal-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.location-close-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.location-close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.location-modal-content {
+  padding: 0;
+  max-height: calc(90vh - 80px);
+  overflow-y: auto;
+}
+
+/* Responsive adjustments for location modal */
+@media (max-width: 768px) {
+  .location-modal {
+    max-width: 95vw;
+    max-height: 95vh;
+  }
+  
+  .location-modal-header {
+    padding: 1rem;
+  }
+  
+  .location-modal-title {
+    font-size: 1.1rem;
+  }
+  
+  .location-modal-content {
+    max-height: calc(95vh - 70px);
+  }
+  
+  .header-right {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .location-btn {
+    order: -1;
   }
 }
