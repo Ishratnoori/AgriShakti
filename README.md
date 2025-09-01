@@ -1,77 +1,116 @@
-# AgriShakti - Agriculture Technology Platform
 
-A comprehensive agriculture technology platform to help farmers all over the world.
 
-## 🚀 New Feature: Real-Time Soil Analysis
+# 🌱 AgriShakti
 
-The platform now includes **real-time soil health analysis** powered by Google Earth Engine:
+> **Empowering Farmers, Enriching Agriculture**
 
-- **Satellite-based NDVI** calculation for crop health monitoring
-- **Soil moisture analysis** from NASA SMAP data
-- **Soil property assessment** (pH, organic carbon, water holding capacity)
-- **AI-powered recommendations** based on soil health status
-- **Real-time data integration** with the Crop Health Card
+AgriShakti is a smart agriculture assistant platform that provides **real-time insights, crop recommendations, soil health analysis, mandi prices, and weather forecasting**.  
 
-### Quick Start for Soil Analysis
+It integrates **Machine Learning, APIs, and Geolocation services** to support farmers in making data-driven decisions.
 
-1. **Install Python dependencies:**
-   ```bash
-   cd backend
-   pip install -r requirements.txt
-   ```
+---
 
-2. **Authenticate with Google Earth Engine:**
-   ```bash
-   earthengine authenticate
-   ```
+## ✨ Features
 
-3. **Start the soil analysis API:**
-   ```bash
-   # Windows
-   start_soil_api.bat
-   
-   # Linux/Mac
-   python start_soil_api.py
-   ```
+- 🔐 **Authentication & Dashboard** – Secure login with personalized farmer dashboard  
+- 🌾 **Crop Planner** – Yield prediction, fertilizer suggestion, and crop recommendations  
+- 🧪 **Soil Analysis** – Real-time soil testing with soil health cards & API integration  
+- ☁️ **Weather Forecasting** – 7-day forecast, rainfall & storm alerts, weather-based suggestions  
+- 📍 **Location-Based Insights** – Google Maps integration, mandi price tracking, regional crop guidance  
+- 📊 **Reports & Visualization** – Crop health cards and interactive trend visualizations  
 
-4. **Access the API:**
-   - API: http://localhost:8000
-   - Documentation: http://localhost:8000/docs
-   - Health Check: http://localhost:8000/health
+---
 
-See `backend/README_SOIL_API.md` for detailed documentation.
+## 🛠 Tech Stack
 
-## Project Structure
+| Layer        | Technology Used |
+|--------------|-----------------|
+| **Frontend** | React.js, CSS/Tailwind |
+| **Backend**  | Node.js, Express.js |
+| **ML Models**| Python (Crop, Fertilizer, Yield, Soil Analysis) |
+| **APIs**     | Google Maps API, Weather API, Custom Soil Testing API |
 
-```
+---
+
+## 📂 Project Structure
+
+```bash
 AgriShakti/
-├── frontend/                 # React frontend application
-│   ├── public/              # Static files
-│   ├── src/                 # React source code
-│   │   ├── components/      # React components
-│   │   │   ├── dashboard/   # Dashboard components
-│   │   │   ├── FarmerDashboard.js
-│   │   │   └── LoginForm.js
-│   │   ├── App.js
-│   │   └── index.js
-│   ├── package.json
-│   └── README.md
-├── backend/                  # Node.js/Express backend + Python FastAPI
-│   ├── routes/              # API routes
-│   ├── controllers/         # Route controllers
-│   ├── models/              # Database models
-│   ├── middleware/          # Custom middleware
-│   ├── config/              # Configuration files
-│   ├── server.js            # Main Express server file
-│   ├── soil_analysis_api.py # Python FastAPI for soil analysis
-│   ├── requirements.txt     # Python dependencies
-│   ├── start_soil_api.py   # Python API startup script
-│   ├── start_soil_api.bat  # Windows startup script
-│   ├── package.json
-│   ├── README_SOIL_API.md  # Soil API documentation
-│   └── README.md
-├── package.json              # Root package.json
-└── README.md                 # This file
+│── frontend/             # React-based UI
+│   ├── components/       # Dashboard, Crop Planner, WeatherCard, etc.
+│   ├── styles/           # CSS & animations
+│   └── package.json
+│
+│── backend/              # Node.js + Express backend
+│   ├── routes/           # API endpoints
+│   └── server.js
+│
+│── ml_models/            # Python ML models
+│   ├── crop_recommendation.py
+│   ├── fertilizer_recommendation.py
+│   ├── crop_yield.py
+│   ├── soil_analyser.py
+│   └── requirements2.txt
+│
+└── README.md
+````
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/Ishratnoori/AgriShakti.git
+cd AgriShakti
 ```
 
+### 2️⃣ Setup Frontend
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+### 3️⃣ Setup Backend
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+
+---
+
+## 👨‍💻 Contributors
+
+| Name                                                 | Role                                   |
+| ---------------------------------------------------- | -------------------------------------- |
+| [@Ishratnoori](https://github.com/Ishratnoori)       | Project Lead · Fullstack & Integration |
+| [@Code18Aryan](https://github.com/Code18Aryan)       | Frontend & API Integration             |
+| [@Vd7905](https://github.com/Vd7905)                 | Machine Learning Models                |
+| [@sasidhar764](https://github.com/sasidhar764)       | Soil Analysis & Backend Support        |
+| [@shubh7007-rich](https://github.com/shubh7007-rich) | Features & Testing                     |
+
+---
+
+## 📸 Screenshots (Demo)
+
+
+* Dashboard
+* Crop Planner
+* Soil Analysis
+
+---
+
+## 📜 License
+
+Licensed under the **MIT License** – feel free to use and modify for learning and development purposes.
+
+---
+
+🌾 **AgriShakti – Technology for Smarter Farming** 🌱
 
