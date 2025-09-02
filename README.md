@@ -8,6 +8,12 @@ AgriShakti is a smart agriculture assistant platform that provides **real-time i
 
 It integrates **Machine Learning, APIs, and Geolocation services** to support farmers in making data-driven decisions.
 
+✅ So in short, our project uses:
+
+React.js + CSS → Node.js + Express.js → Python ML Models → External APIs
+
+No database, no stateful storage - looks more like a data-driven dashboard powered by APIs & ML.
+
 ---
 
 ## ✨ Features
