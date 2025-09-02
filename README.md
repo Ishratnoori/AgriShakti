@@ -77,8 +77,6 @@ npm start
 ### 3️⃣ Setup Backend
 
 ```bash
-cd backend
-npm install
 npm run dev
 ```
 
@@ -100,9 +98,20 @@ npm run dev
 ## 📸 Screenshots (Demo)
 
 
+* Login
+<img width="1890" height="875" alt="image" src="https://github.com/user-attachments/assets/176a4f31-9b2b-434c-946e-85ad1f45625b" />
 * Dashboard
+<img width="1876" height="868" alt="image" src="https://github.com/user-attachments/assets/1f4d0985-13e5-4c7d-ae4c-a3ffed8968e5" />
+
+
 * Crop Planner
+<img width="1622" height="874" alt="image" src="https://github.com/user-attachments/assets/26e054ef-02a1-454d-a713-d4e4f033668b" />
+
 * Soil Analysis
+<img width="1402" height="869" alt="image" src="https://github.com/user-attachments/assets/29dfa851-7e57-4ba7-8831-6b30cdb3372b" />
+* Mandi Prices
+<img width="1725" height="873" alt="image" src="https://github.com/user-attachments/assets/59529430-d841-49cf-a94e-93a31d9a4416" />
+
 
 ---
 
