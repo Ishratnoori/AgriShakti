@@ -89,9 +89,9 @@ npm run dev
 | ---------------------------------------------------- | -------------------------------------- |
 | [@Ishratnoori](https://github.com/Ishratnoori)       | Project Lead · Fullstack & Integration |
 | [@Code18Aryan](https://github.com/Code18Aryan)       | Frontend & API Integration             |
-| [@Vd7905](https://github.com/Vd7905)                 | Machine Learning Models                |
-| [@sasidhar764](https://github.com/sasidhar764)       | Soil Analysis & Backend Support        |
-| [@shubh7007-rich](https://github.com/shubh7007-rich) | Features & Testing                     |
+| [@Vd7905](https://github.com/Vd7905)                 | Soil Analysis & Backend Support        |
+| [@sasidhar764](https://github.com/sasidhar764)       | Machine Learning Models                |
+| [@shubh7007-rich](https://github.com/shubh7007-rich) | Features & Testing, Mandi Prices       |
 
 ---
 
